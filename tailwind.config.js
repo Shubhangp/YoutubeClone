@@ -1,8 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: [
+    "./src/**/*.js"
+  ],
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        'search': 'inset 0 1px 2px #eee',
+      }
+    },
   },
   plugins: [],
 }
