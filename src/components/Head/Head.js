@@ -2,7 +2,7 @@ import React from 'react'
 
 const Head = () => {
   return (
-    <div className='flex items-center justify-between h-14 px-4'>
+    <div className='fixed w-full top-0 flex items-center justify-between h-14 px-4 z-[2020]'>
       <div className='flex items-center col-span-1'>
         <div className='h-10 p-2'>
           <svg viewBox="0 0 24 24" width="24" focusable="false">
