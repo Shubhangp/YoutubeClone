@@ -1,6 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 const SideBar = () => {
+  const isMenuOpen = useSelector(store => store.app.isMenuOpen);
+
+  if(!isMenuOpen) return null;
+
   return (
     <div className='fixed right-auto left-0 -top-[120px] -bottom-[120px] min-w-[240px] max-w-[256px] touch-pan-y z-[2005] '>
       <div className='w-full absolute top-0 bottom-0 left-0 py-[120px] px-0 bg-[#FFF] transform translate-x-0 translate-y-0 translate-z-0'>
@@ -16,7 +21,7 @@ const SideBar = () => {
                         <a href="/" className='w-full min-h-[40px] cursor-pointer box-border outline-0 text-[#0f0f0f] flex items-center hover:bg-black/[0.05] hover:rounded-[10px]'>
                           <div className='px-3 flex items-center text-base font-normal'>
                             <div className='mr-6'>
-                              <svg enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false">
+                              <svg enableBackground="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false">
                                 <g>
                                   <path d="M4 21V10.08l8-6.96 8 6.96V21h-6v-6h-4v6H4z"></path>
                                 </g>
@@ -42,7 +47,7 @@ const SideBar = () => {
                         <a href="/" className='w-full min-h-[40px] cursor-pointer box-border outline-0 text-[#0f0f0f] flex items-center hover:bg-black/[0.05] hover:rounded-[10px]'>
                           <div className='px-3 flex items-center text-base font-normal'>
                             <div className='mr-6'>
-                              <svg enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false">
+                              <svg enableBackground="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false">
                                 <path d="M10 18v-6l5 3-5 3zm7-15H7v1h10V3zm3 3H4v1h16V6zm2 3H2v12h20V9zM3 10h18v10H3V10z"></path>
                               </svg>
                             </div>

@@ -9,7 +9,7 @@ module.exports = {
         'search': 'inset 0 1px 2px #eee',
       },
       fontFamily: {
-      'roboto': ['ui-sans-serif', 'Roboto Mono'],
+      'roboto': ['Roboto Mono', 'sans-serif'],
       },
     },
   },

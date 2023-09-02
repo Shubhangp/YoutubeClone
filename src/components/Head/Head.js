@@ -1,10 +1,18 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
+import { toogleMenu } from '../../utils/appSlice';
 
 const Head = () => {
+  const dispatch = useDispatch();
+
+  const toggleMenuHandler = () => {
+    dispatch(toogleMenu());
+  };
+
   return (
-    <div className='fixed w-full top-0 flex items-center justify-between h-14 px-4 z-[2020]'>
+    <div className='fixed w-full top-0 flex items-center justify-between h-14 px-4 z-[2020] bg-white'>
       <div className='flex items-center col-span-1'>
-        <div className='h-10 p-2'>
+        <div className='h-10 p-2 cursor-pointer' onClick={() => toggleMenuHandler()}>
           <svg viewBox="0 0 24 24" width="24" focusable="false">
             <path d="M21 6H3V5h18v1zm0 5H3v1h18v-1zm0 6H3v1h18v-1z"></path>
           </svg>
@@ -39,7 +47,7 @@ const Head = () => {
             </div>
           </form>
           <button className='h-10 w-16 m-0 flex items-center justify-center bg-[#f8f8f8] border border-[#d3d3d3] rounded-r-[40px] cursor-pointer'>
-            <svg enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false">
+            <svg enableBackground="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false">
               <path d="m20.87 20.17-5.59-5.59C16.35 13.35 17 11.75 17 10c0-3.87-3.13-7-7-7s-7 3.13-7 7 3.13 7 7 7c1.75 0 3.35-.65 4.58-1.71l5.59 5.59.7-.71zM10 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"></path>
             </svg>
           </button>
@@ -58,14 +66,14 @@ const Head = () => {
             </svg>
           </div>  
           <div className='w-10 h-10 p-2 mr-2 flex items-center'>
-            <svg className='h-8' enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false">
+            <svg className='h-8' enableBackground="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false">
               <path d="M10 20h4c0 1.1-.9 2-2 2s-2-.9-2-2zm10-2.65V19H4v-1.65l2-1.88v-5.15C6 7.4 7.56 5.1 10 4.34v-.38c0-1.42 1.49-2.5 2.99-1.76.65.32 1.01 1.03 1.01 1.76v.39c2.44.75 4 3.06 4 5.98v5.15l2 1.87zm-1 .42-2-1.88v-5.47c0-2.47-1.19-4.36-3.13-5.1-1.26-.53-2.64-.5-3.84.03C8.15 6.11 7 7.99 7 10.42v5.47l-2 1.88V18h14v-.23z"></path>
             </svg>
           </div>
           <div className='p-2 mr-2 flex items-center'>
             <div className='px-[6px] py-[1px] flex items-center justify-center'>
               <svg className='h-6' xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 14 14">
-                <g fill="none" stroke="#065fd4" stroke-linecap="round" stroke-linejoin="round">
+                <g fill="none" stroke="#065fd4" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="7" cy="5.5" r="2.5"/>
                   <path d="M2.73 11.9a5 5 0 0 1 8.54 0"/>
                   <circle cx="7" cy="7" r="6.5"/>
@@ -73,7 +81,6 @@ const Head = () => {
               </svg>
             </div>
           </div>
-          
         </div>
       </div>
     </div>
