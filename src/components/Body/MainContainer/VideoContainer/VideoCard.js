@@ -41,7 +41,7 @@ const VideoCard = ({video}) => {
     }, [publishedAt]);
 
     return (
-      <div className="relative w-[calc(100%/3-16px-0.01px);] ml-[calc(16px*2)] mr-[calc(16px*2)] mb-10">
+      <div className="relative w-[calc(100%/3-16px-0.01px);] ml-[calc(16px/2)] mr-[calc(16px/2)] mb-10">
         <div className="h-full flex justify-center">
           <div className="w-full">
             <div className="w-full h-full inline-block">
@@ -73,7 +73,7 @@ const VideoCard = ({video}) => {
                   <div className="overflow-x-hidden pr-6">
                     <h3 className="text-[#0f0f0f] mx-0 mt-3 mb-1">
                       <a href="/" className="cursor-pointer">
-                        <p className="font-medium text-[#0f0f0f] text-[1rem]">
+                        <p className="font-medium text-[#0f0f0f] text-[1rem] line-clamp-2">
                           {title}
                         </p>
                       </a>
