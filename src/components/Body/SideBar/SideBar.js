@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const SideBar = () => {
   const isMenuOpen = useSelector(store => store.app.isMenuOpen);
@@ -18,7 +19,7 @@ const SideBar = () => {
                   <div className='block min-h-[40px] border-b border-black/[0.1] p-3'>
                     <div>
                       <div className='relative block w-[calc(100%-12px)] bg-black/[0.05] rounded-[10px] '>
-                        <a href="/" className='w-full min-h-[40px] cursor-pointer box-border outline-0 text-[#0f0f0f] flex items-center hover:bg-black/[0.05] hover:rounded-[10px]'>
+                        <Link to="/" className='w-full min-h-[40px] cursor-pointer box-border outline-0 text-[#0f0f0f] flex items-center hover:bg-black/[0.05] hover:rounded-[10px]'>
                           <div className='px-3 flex items-center text-base font-normal'>
                             <div className='mr-6'>
                               <svg enableBackground="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" focusable="false">
@@ -29,7 +30,7 @@ const SideBar = () => {
                             </div>
                             <div className='grow shrink basis-[1e-9px] whitespace-nowrap text-ellipsis text-[#0f0f0f] font-roboto font-medium'>Home</div>
                           </div>
-                        </a>
+                        </Link>
                       </div>
                       <div className='relative block w-[calc(100%-12px)] rounded-[10px] '>
                         <a href="/" className='w-full min-h-[40px] cursor-pointer box-border outline-0 text-[#0f0f0f] flex items-center hover:bg-black/[0.05] hover:rounded-[10px]'>

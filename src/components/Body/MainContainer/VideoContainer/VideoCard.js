@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const formatViewCount = (viewCount) => {
     const view = parseFloat(viewCount);
@@ -48,8 +49,8 @@ const VideoCard = ({video}) => {
               <div className="w-full h-full flex items-center flex-row flex-wrap">
                 <div className="w-full inline-block cursor-pointer">
                   <div className="relative block w-full before:block before:w-full before:rounded-xl before:pb-[56.25%] before:bg-black/[0.1]">
-                    <a
-                      href="/"
+                    <Link
+                      to={"/watch?v=" + video.id}
                       className="absolute top-0 bottom-0 left-0 right-0 h-full block ml-auto mr-auto overflow-hidden rounded-xl"
                     >
                       <img
@@ -57,7 +58,7 @@ const VideoCard = ({video}) => {
                         alt=""
                         src={thumbnails?.high?.url}
                       />
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="relative cursor-pointer m-0 flex">

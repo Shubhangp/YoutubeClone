@@ -17,7 +17,7 @@ const Head = () => {
             <path d="M21 6H3V5h18v1zm0 5H3v1h18v-1zm0 6H3v1h18v-1z"></path>
           </svg>
         </div>
-        <div>
+        <a href='/'>
           <svg className="w-[90px] h-5 ml-4" viewBox="0 0 90 20" focusable="false">
             <svg viewBox="0 0 90 20" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
               <g>
@@ -37,7 +37,7 @@ const Head = () => {
               </g>
             </svg>
           </svg>
-        </div>
+        </a>
       </div>
       <div className='flex grow-0 shrink basis-[732px] items-center'>
         <div className='flex grow shrink basis-[1e-9px] ml-10 px-1'>
