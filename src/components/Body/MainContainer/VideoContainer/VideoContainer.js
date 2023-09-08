@@ -5,7 +5,6 @@ import VideoCard from './VideoCard';
 const VideoContainer = () => {
 
   const [videos, setVideos] = useState([]);
-  console.log(videos);
   useEffect(() => {
     getVideos();
   }, []);
