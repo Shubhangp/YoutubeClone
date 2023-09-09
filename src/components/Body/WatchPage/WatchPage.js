@@ -3,6 +3,7 @@ import VideoPlayer from './VideoPlayer';
 import { useDispatch } from 'react-redux';
 import { closeMenu } from "../../../utils/appSlice";
 import { useSearchParams } from 'react-router-dom';
+import CommentContainer from './CommentContainer';
 
 const WatchPage = () => {
     const [searchParam] = useSearchParams();
@@ -14,9 +15,9 @@ const WatchPage = () => {
     }, []);
 
   return (
-    <div>
-      WatchPage
+    <div className='flex flex-col'>
       <VideoPlayer videoId= {searchParam.get("v")} />
+      <CommentContainer />
     </div>
   );
 }
