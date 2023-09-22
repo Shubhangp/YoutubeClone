@@ -47,7 +47,7 @@ const VideoCard = ({video}) => {
       const now = new Date();
       const publishedOn = new Date(publishedAt);
       const timeDifference = now - publishedOn;
-
+      
       const years = Math.floor(timeDifference / (365 * 24 * 60 * 60 * 1000));
       const months = Math.floor(
         (timeDifference % (365 * 24 * 60 * 60 * 1000)) /
@@ -56,8 +56,11 @@ const VideoCard = ({video}) => {
       const days = Math.floor(
         (timeDifference % (30 * 24 * 60 * 60 * 1000)) / (24 * 60 * 60 * 1000)
       );
+      const hours = Math.floor(
+        (timeDifference % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000)
+      );
 
-      setTimeSince({ years, months, days });
+      setTimeSince({ years, months, days, hours });
     }, [publishedAt]);
 
     return (
@@ -126,7 +129,10 @@ const VideoCard = ({video}) => {
                       <div className="flex flex-wrap max-h-16 max-w-full text-[0.9rem] text-[#606060] font-normal overflow-hidden">
                         <span>{formattedViewCount} views</span>
                         <span className="mx-1">.</span>
-                        <span>{timeSince.days} days ago</span>
+                        {timeSince.days !== 0 ? 
+                        (<span>{timeSince.days} days ago</span>)
+                        :(<span>{timeSince.hours} hours ago</span>)
+                        }
                       </div>
                     </div>
                   </div>
