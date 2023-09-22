@@ -17,10 +17,29 @@ const formatViewCount = (viewCount) => {
 
 const VideoCard = ({video}) => {
     const [timeSince, setTimeSince] = useState({years: 0, months: 0, days: 0,});
-
-    const {snippet, statistics} = video;
+    const { snippet, statistics, contentDetails } = video;
+    const { duration } = contentDetails;
     const { title, thumbnails, channelTitle, publishedAt } = snippet;
     const {viewCount} = statistics;
+
+    function parseDuration(duration) {
+      const regex = /PT(\d+H)?(\d+M)?(\d+S)?/;
+      const matches = duration.match(regex);
+
+      if (!matches) {
+        throw new Error("Invalid duration format");
+      }
+
+      const hours = matches[1] ? parseInt(matches[1]) : 0;
+      const minutes = matches[2] ? parseInt(matches[2]) : 0;
+      const seconds = matches[3] ? parseInt(matches[3]) : 0;
+
+      const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
+
+      return { hours, minutes, seconds: formattedSeconds };
+    }
+
+    const { minutes, seconds } = parseDuration(duration);
 
     const formattedViewCount = formatViewCount(viewCount);
 
@@ -58,6 +77,13 @@ const VideoCard = ({video}) => {
                         alt=""
                         src={thumbnails?.high?.url}
                       />
+                      <div className="absolute bottom-0 right-0 m-1">
+                        <div className="inline-flex flex-row items-center text-[#FFF] text-sm font-medium bg-black/[0.8] h-5 rounded px-1 py-[3px] ">
+                          <span className="overflow-hidden">
+                            {minutes}:{seconds}
+                          </span>
+                        </div>
+                      </div>
                     </Link>
                   </div>
                 </div>
